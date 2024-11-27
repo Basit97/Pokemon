@@ -43,7 +43,7 @@ int main() {
     cout << "3. Squirtle - The water type. Cool as a cucumber!\n";
 
     int choice;
-    cout << "Professor Oak: So, which one will it be? Enter the number of your choice: ";
+    cout << "\nProfessor Oak: So, which one will it be? Enter the number of your choice: \n";
     cin >> choice;
 
     // Map the integer choice to the corresponding enum value
