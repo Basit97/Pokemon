@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <limit>
 using namespace std;
 
 // Function to clear the console
@@ -15,6 +16,7 @@ void clearConsole() {
 // Function to wait for user to press Enter
 void waitForEnter() {
     cin.get(); // Wait for Enter key
+    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
 // Define an enum for Pokemon choices
