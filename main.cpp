@@ -1,4 +1,6 @@
 #include <iostream>
+#include "PokemonType.hpp"
+#include "PokemonChoice.hpp"
 #include <string>
 #include <limit>
 using namespace std;
@@ -19,22 +21,6 @@ void waitForEnter() {
     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
-// Define an enum for Pokemon choices
-enum class PokemonChoice {
-    CHARMANDER = 1,
-    BULBASAUR,
-    SQUIRTLE,
-    PIKACHU // Default choice
-};
-
-// Define an enum for Pokemon types
-enum class PokemonType {
-    FIRE,
-    GRASS,
-    WATER,
-    ELECTRIC,
-    NORMAL // Added for the default constructor
-};
 
 // Pokemon class definition
 class Pokemon {
@@ -306,4 +292,4 @@ int main() {
     gameLoop(player);
 
     return 0;
-#include "header.hpp"
+}
