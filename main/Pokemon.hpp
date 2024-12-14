@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "PokemonType.hpp"
+enum PokemonType;
 using namespace std;
 
 class Pokemon {
