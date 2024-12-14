@@ -1,31 +1,37 @@
-// Player.cpp
 #include "Player.hpp"
-#include "iostream"
+#include "PokemonChoice.hpp"
+#include "PokemonType.hpp"
+#include "Utility.hpp"
+#include <iostream>
 using namespace std;
+// Player class definition
 
+
+  // Default constructor
 Player::Player() {
     name = "Trainer";
     chosenPokemon = Pokemon(); // Using the default Pokemon constructor
 }
 
+// Parameterized constructor
 Player::Player(string p_name, Pokemon p_chosenPokemon) {
     name = p_name;
     chosenPokemon = p_chosenPokemon;
 }
 
 void Player::choosePokemon(int choice) {
-    switch ((PokemonChoice)choice) {
-    case PokemonChoice::CHARMANDER:
-        chosenPokemon = Pokemon("Charmander", PokemonType::FIRE, 100);
+    switch (choice) {
+    case CHARMANDER:
+        chosenPokemon = Pokemon("Charmander", FIRE, 100);
         break;
-    case PokemonChoice::BULBASAUR:
-        chosenPokemon = Pokemon("Bulbasaur", PokemonType::GRASS, 100);
+    case BULBASAUR:
+        chosenPokemon = Pokemon("Bulbasaur", GRASS, 100);
         break;
-    case PokemonChoice::SQUIRTLE:
-        chosenPokemon = Pokemon("Squirtle", PokemonType::WATER, 100);
+    case SQUIRTLE:
+        chosenPokemon = Pokemon("Squirtle", WATER, 100);
         break;
     default:
-        chosenPokemon = Pokemon("Pikachu", PokemonType::ELECTRIC, 100);
+        chosenPokemon = Pokemon("Pikachu", ELECTRIC, 100);
         break;
     }
     cout << "Player " << name << " chose " << chosenPokemon.name << "!\n";
