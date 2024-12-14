@@ -1,9 +1,12 @@
-#include "PokemonChoice.hpp"
-#include "PokemonType.hpp"
+//#include "PokemonChoice.hpp"
+//#include "PokemonType.hpp"
 #include "Utility.hpp"
 #include <iostream>
 #include <limits> // Include this header to use numeric_limits
 #include <string>
+class Player;
+class Pokemon;
+enum PokemonType;
 using namespace std;
 
 // Pokemon class definition
