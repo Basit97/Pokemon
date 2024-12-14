@@ -2,7 +2,7 @@
 #include "PokemonType.hpp"
 #include "Utility.hpp"
 #include <iostream>
-#include <limits> // Include this header to use numeric_limits
+#include <limits> // Used this header to use numeric_limits
 #include <string>
 using namespace std;
 
