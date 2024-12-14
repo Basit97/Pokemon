@@ -12,6 +12,8 @@ void Utility::clearConsole() {
 #endif
 }
 
+(void)system("clear");
+
 void Utility::waitForEnter() {
     cin.get();
 }
