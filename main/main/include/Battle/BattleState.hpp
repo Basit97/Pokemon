@@ -1,10 +1,14 @@
-// BattleState.hpp
 #pragma once
-#include "Pokemon.hpp"
+#include "../Pokemon/Pokemon.hpp"
 
-struct BattleState {
-    Pokemon* playerPokemon;  // Pointer to the player's Pokémon
-    Pokemon* wildPokemon;    // Pointer to the wild Pokémon
-    bool playerTurn;          // True if it's the player's turn, false otherwise
-    bool battleOngoing;       // True if the battle is still ongoing
-};
+namespace N_Battle
+{
+    using namespace N_Pokemon;
+
+    struct BattleState {
+        Pokemon* playerPokemon;
+        Pokemon* wildPokemon;
+        bool playerTurn;
+        bool battleOngoing;
+    };
+}
