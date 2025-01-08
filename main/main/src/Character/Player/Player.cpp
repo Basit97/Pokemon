@@ -1,35 +1,46 @@
-// Player.cpp
-#include "Player.hpp"
-#include "PokemonChoice.hpp"
-#include "PokemonType.hpp"
-#include "Utility.hpp"
 #include "iostream"
+#include "../../../include/Character/Player/Player.hpp"
+#include "../../../include/Pokemon/PokemonChoice.hpp"
+#include "../../../include/Pokemon/Pokemons/Pikachu.hpp"
+#include "../../../include/Utility/Utility.hpp"
+#include "../../../include/Pokemon/Pokemons/Bulbasaur.hpp"
+#include "../../../include/Pokemon/Pokemons/Charmander.hpp"
+#include "../../../include/Pokemon/Pokemons/Squirtle.hpp"
 
-Player::Player() {
-    name = "Trainer";
-    chosenPokemon = Pokemon(); // Using the default Pokemon constructor
-}
+namespace N_Character
+{
+    namespace N_Player
+    {
+        using namespace N_Utility;
+        using namespace N_Pokemon;
+        using namespace N_Pokemons;
 
-Player::Player(std::string p_name, Pokemon p_chosenPokemon) {
-    name = p_name;
-    chosenPokemon = p_chosenPokemon;
-}
+        Player::Player() {
+            name = "Trainer";
+        }
 
-void Player::choosePokemon(int choice) {
-    switch ((PokemonChoice)choice) {
-    case PokemonChoice::CHARMANDER:
-        chosenPokemon = Pokemon("Charmander", PokemonType::FIRE, 100);
-        break;
-    case PokemonChoice::BULBASAUR:
-        chosenPokemon = Pokemon("Bulbasaur", PokemonType::GRASS, 100);
-        break;
-    case PokemonChoice::SQUIRTLE:
-        chosenPokemon = Pokemon("Squirtle", PokemonType::WATER, 100);
-        break;
-    default:
-        chosenPokemon = Pokemon("Pikachu", PokemonType::ELECTRIC, 100);
-        break;
+        Player::Player(std::string p_name) {
+            name = p_name;
+        }
+
+        void Player::choosePokemon(int choice) {
+            switch ((PokemonChoice)choice) {
+            case PokemonChoice::CHARMANDER:
+                chosenPokemon = new Charmander();
+                break;
+            case PokemonChoice::BULBASAUR:
+                chosenPokemon = new Bulbasaur();
+                break;
+            case PokemonChoice::SQUIRTLE:
+                chosenPokemon = new Squirtle();
+                break;
+            default:
+                chosenPokemon = new Pikachu();
+                break;
+            }
+            std::cout << "Player " << name << " chose " << chosenPokemon->name << "!\n";
+            Utility::waitForEnter(); // Wait for user to press Enter before
+            // proceeding
+        }
     }
-    std::cout << "Player " << name << " chose " << chosenPokemon.name << "!\n";
-    Utility::waitForEnter(); // Wait for user to press Enter before proceeding
 }
