@@ -1,5 +1,5 @@
 #pragma once
-#include "../include/Pokemon.hpp"
+#include "Pokemon.hpp"
 #include "PokemonType.hpp"
 #include <iostream>
 using namespace std;
