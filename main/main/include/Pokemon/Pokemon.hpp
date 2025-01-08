@@ -1,23 +1,37 @@
 #pragma once
 #include <string>
+#include <vector>
+#include "Move.hpp"
 using namespace std;
 
-enum class PokemonType;
+namespace N_Pokemon {
 
-class Pokemon {
-public:
-    string name;
-    PokemonType type;
-    int health;
-    int maxHealth;
-    int attackPower;
+    struct Move;
+    enum class PokemonType;
 
-    Pokemon();
-    Pokemon(string p_name, PokemonType p_type, int p_health, int p_attackPower);
-    Pokemon(const Pokemon& other);
+    class Pokemon {
+    public:
+        std::string name;
+        PokemonType type;
+        int health;
+        int maxHealth;
+        vector<Move> moves; // Store the list of moves
 
-    bool isFainted() const;
-    void heal();
-    void attack(Pokemon& target);
-    void takeDamage(int damage);
-};
+        Pokemon();
+        Pokemon(std::string p_name, PokemonType p_type, int p_health, vector<Move>);
+        Pokemon(Pokemon* other);
+
+        bool isFainted() const;
+        void heal();
+        virtual void attack(Move selectedMove, Pokemon* target);
+        void takeDamage(int damage);
+        void selectAndUseMove(Pokemon* target);
+        void reduceAttackPower(int reduced_damage);
+
+    protected:
+        // Base implementation for selecting and using a move
+        void printAvailableMoves();
+        int selectMove();
+        void useMove(Move selectedMove, Pokemon* target);
+    };
+}
