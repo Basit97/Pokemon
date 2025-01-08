@@ -1,6 +1,3 @@
-#pragma once
-// Utility.hpp
-
 namespace N_Utility {
 
     class Utility {
@@ -9,5 +6,4 @@ namespace N_Utility {
         static void waitForEnter();
         static void clearInputBuffer(); // New helper function
     };
-
 }
