@@ -4,9 +4,9 @@
 namespace N_Pokemon {
     namespace N_Pokemons {
 
-        class Caterpie : public Pokemon {
+        class Charmander : public Pokemon {
         public:
-            Caterpie();
+            Charmander();
             void attack(Move selectedMove, Pokemon* target) override;
         };
 
